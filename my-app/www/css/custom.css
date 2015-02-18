@@ -1,6 +1,8 @@
 html, body {
   height: 100%;
+  background: #fff;
 }
+
 
 .navbar-toggle {
   float: left;
@@ -37,7 +39,7 @@ html, body {
   }
   .navbar {
     right: auto;
-    background: none;
+    background: #fff;
     border: none;
   }
   .canvas {
