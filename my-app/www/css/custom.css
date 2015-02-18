@@ -1,6 +1,70 @@
-
-
-.navbar-toggle{
-	border: 0px solid !important;
+html, body {
+  height: 100%;
 }
 
+.navbar-toggle {
+  float: left;
+  margin-left: 15px;
+  border:transparent;
+}
+.trans{
+  background:none !important;
+  cursor:pointer;
+}
+
+.navmenu {
+  z-index: 1;
+}
+
+.canvas {
+  position: relative;
+  left: 0;
+  z-index: 2;
+  min-height: 100%;
+  padding: 50px 0 0 0;
+  background: #fff;
+}
+
+@media (min-width: 0) {
+  .navbar-toggle {
+    display: block; /* force showing the toggle */
+  }
+}
+
+@media (min-width: 992px) {
+  body {
+    padding: 0;
+  }
+  .navbar {
+    right: auto;
+    background: none;
+    border: none;
+  }
+  .canvas {
+    padding: 0;
+  }
+}
+
+
+
+.pulled-down-min{
+  margin-top: -7px !important;
+
+}
+
+.left-text{
+  text-align: :left;
+}
+
+.navmenu-nav > li a{
+  background:;
+  border-bottom:thin solid #ccc;
+
+}
+.navmenu-nav > li a:last-child{
+  border-bottom:thin solid #ccc;
+}
+
+.pulled-down-sm{
+  margin-top: :450px;
+}
