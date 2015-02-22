@@ -30,62 +30,75 @@
         <link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css">
         <link rel="stylesheet" type="text/css" href="./css/custom.css" />
         <link rel="stylesheet" type="text/css" href="./css/jasny-bootstrap.min.css" />
+        
         <title>Designing Clothes with Sewing Pattern Generator Android Application</title>
 
     </head>
     <body>
- <div class="navmenu navmenu-default navmenu-fixed-left offcanvas">
-      <a class="navmenu-brand" href="#"></a>
-      <ul class="nav navmenu-nav">
-        <li ><a href=""><span class="glyphicon glyphicon-home">&nbsp;</span> Design</a></li>
-        <li ><a href=""><span class="glyphicon glyphicon-scissors">&nbsp;</span>Create pattern</a></li>
-        <li><a href=""><span class="glyphicon glyphicon-tasks">&nbsp;</span>My pattern</a></li>
-        <li><a href=""><span class="glyphicon glyphicon-send">&nbsp;</span>Exit</a></li>
-      </ul>
+        <!-- Load Navigation -->
+        <div class="navmenu navmenu-default navmenu-fixed-left offcanvas">
+            <a class="navmenu-brand" href="#"></a>
+            <ul class="nav navmenu-nav">
+                <li ><a href="" class="design" data-toggle="offcanvas" data-target=".navmenu" data-canvas="body"><span class="glyphicon glyphicon-home">&nbsp;</span> Design</a></li>
+                <li ><a href="#" class="pattern" data-toggle="offcanvas" data-target=".navmenu" data-canvas="body"><span class="glyphicon glyphicon-scissors">&nbsp;</span>Create pattern</a></li>
+                <li><a href=""><span class="glyphicon glyphicon-tasks">&nbsp;</span>My pattern</a></li>
+                <li><a href="" id="a"><span class="glyphicon glyphicon-send">&nbsp;</span>Exit</a></li>
+            </ul>
+        </div>
       
-    </div>
+      
+        <!-- Fixed Bar -->
+        <div class="navbar navbar-default navbar-fixed-top">
+              <div class="container">
+                <div class="col-sm-4">
+                    <span class="navbar-toggle trans" data-toggle="offcanvas" data-target=".navmenu" data-canvas="body">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </span>
+                    &nbsp;
+                    <div class="pulled-down-min">
+                        <p class="lead"></p>
+                        
+                    </div>
+                </div>
 
-    <div class="navbar navbar-default navbar-fixed-top">
-      <div class="container">
-        <div class="col-sm-4">
-            <span class="navbar-toggle trans" data-toggle="offcanvas" data-target=".navmenu" data-canvas="body">
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </span>
-            &nbsp;
-            <div class="pulled-down-min">
-                <p class="lead">DRESS DESIGN</p>
-            </div>
-        
+               
+              </div>         
         </div>
 
-       
-      </div>
-      
-
-    </div>
-
-        <div class="container">
-            <br><br>
-             <div class="row ">
-
-                <div class="col-sm-12" >
-                    <div class="page-header">
-                         <p class="lead  pulled-down-sm">This is a test</p>
-                    </div>
-                       
-                  
-                    
-                </div>
-             </div>
-
+        <!-- Load Pages here -->
+        <div class="container ajaxify">
+            
+             
+             
         </div><!-- /.container -->
-
+        <div id="design"></div>
         <script type="text/javascript" src="./js/cordova.js"></script>
         <script type="text/javascript" src="./js/jquery.js"></script>
         <script type="text/javascript" src="./js/bootstrap.min.js"></script>
         <script type="text/javascript" src="./js/jasny-bootstrap.min.js"></script>
-        
+      
+        <script type="text/javascript">
+            $(document).ready(function(){
+                
+
+                $(".ajaxify").load('./views/designer-page.html');
+                
+
+
+                $(".pattern").on("click",function(event){
+                    event.preventDefault();
+                    $(".ajaxify").load('./views/pattern.html');
+
+                });
+
+                $(".design").click(function(e){
+                    e.preventDefault();
+                    $(".ajaxify").load('./views/designer-page.html');
+
+                });
+            });
+        </script>
     </body>
 </html>

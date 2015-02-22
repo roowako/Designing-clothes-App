@@ -70,3 +70,28 @@ html, body {
 .pulled-down-sm{
   margin-top: :450px;
 }
+
+.radio{
+  padding: 15px;
+  vertical-align:;
+  background: #f5f5f5;
+  border-radius: 3px;
+  text-align: center;
+}
+
+.marginized > button{
+  margin: 5px;
+
+
+}
+
+.cs{
+ 
+  
+  
+   color: :#fff !important;
+   -webkit-appearance: none;
+   -moz-appearance: none;
+   appearance: none;
+    background: url(../img/15xvbd5.png) no-repeat 96% 0;
+} 
