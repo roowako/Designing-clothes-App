@@ -17,45 +17,136 @@
 
 	<div class="col-sm-12" >
 	    <div class="page-header" >
-	         <h1 class="lead  pulled-down-sm">Your Garment</h1>
+	         <h1 class="lead  pulled-down-sm" id="chosen_g">Your Garment</h1>
 	    </div>
 	</div>
 
  
 </div>
 
-<div class="ajaxable row">
+<div class="ajaxable row traversable_t">
     <div class="col-sm-12 marginized">
         <span style="text-align:center;" class="col-xs-12">Type of Garment</span>
         <br><br>
-        <select class="col-xs-12 cs form-control" >
-        	<option> </option>
-        	<option> Blouse </option>
-        	<option> Dress/Gown(w/sleeves) </option>
-        	<option> Dress/Gown(w/o sleeves) </option>
-        	<option> Pants</option>
+        <select class="col-xs-12 cs form-control tg" id="tg">
+        	<option value="default"> Choose type of Garmnent </option>
+        	<option value="blouse"> Blouse </option>
+        	<option value="dGsleeve"> Dress/Gown(w/sleeves) </option>
+        	<option value="dGsleeveless"> Dress/Gown(w/o sleeves) </option>
+        	<option value="pants"> Pants</option>
         </select>
         <br><br><br><br>
         <span style="text-align:center;" class="col-xs-12">Type of Fabric</span>
         <br><br>
-        <select class="col-xs-12 cs form-control" >
-        	<option> </option>
-        	<option> Cotton </option>
-        	<option> Satin </option>
-        	<option> Silk </option>
-        	<option> Linen</option>
+        <select class="col-xs-12 cs form-control fabric" >
+        	<option value="default"> Choose type of Fabric </option>
+        	<option value="cotton"> Cotton </option>
+        	<option value="satin"> Satin </option>
+        	<option value="silk"> Silk </option>
+        	<option value="linen"> Linen</option>
         </select>
+
+        
+    </div>
+
+
+</div>
+<div class="ajaxable row traversable_input">
+    <div class="col-sm-12 marginized">
+        <span style="text-align:center;" class="col-xs-12" ></span>
+        <div class="row">
+            <div class="col-xs-6 form-group">
+                <label></label>
+                <input type="text" class="form-control" placeholder="Shoulder Length">
+            </div>
+            <div class="col-xs-6 form-group">
+                <label></label>
+                <input type="text" class="form-control" placeholder="Bust">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-6 form-group">
+                <label></label>
+                <input type="text" class="form-control" placeholder="Waist">
+            </div>
+            <div class="col-xs-6 form-group">
+                <label></label>
+                <input type="text" class="form-control" placeholder="Hip 1">
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-xs-6 form-group">
+                <label></label>
+                <input type="text" class="form-control" placeholder="Hip 2">
+            </div>
+            <div class="col-xs-6 form-group">
+                <label></label>
+                <input type="text" class="form-control" placeholder="Figure">
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-xs-6 form-group">
+                <label></label>
+                <input type="text" class="form-control" placeholder="Arm hole">
+            </div>
+            <div class="col-xs-6 form-group">
+                <label></label>
+                <input type="text" class="form-control" placeholder="Sleeve length">
+            </div>
+        </div>
+
+
     </div>
 
 
 </div>
 <br><br>
 <div class="row">
-	<div class="col-xs-6">
-	   
-	</div>
 
-	<div class="col-xs-6">
-	    
-	</div>
+   <div class="col-xs-6">
+        <input type="button" value="Back" class="btn btn-warning col-xs-12 btn-back-tg">
+    </div>
+
+     <div class="col-xs-6">
+        <input type="button" value="Next" class="btn btn-warning col-xs-12 btn-next-tg">
+    </div>
+	
 </div>
+
+<script type="text/javascript">
+    
+    $(".traversable_input").hide();
+    $(".btn-back-tg").hide();
+
+    $(".btn-next-tg").on("click",function(e){
+
+        e.preventDefault();
+        //Collect dropdown values
+        var tg = $("#tg option:selected").val();
+        var tf = $(".fabric option:selected").val();
+
+        var tg_text = $("#tg option:selected").text();
+        var tf_text = $(".fabric option:selected").text();
+        console.log(tg);
+
+        //Check for blank inputs
+        if(tg =="default" || tf == "default"){
+            alert("Please select garment or fabric type.");
+        } else{
+            $(".traversable_t").hide("slow").delay(500);
+            $(".traversable_input").show("slow");
+            $("#chosen_g").text(tg_text);
+            $(".btn-back-tg").show();
+        }
+    });
+    $(".btn-back-tg").on("click",function(e){
+        $(this).hide();
+        $("#chosen_g").text("Your Garment");
+         $(".traversable_t").show("slow");
+         $(".traversable_input").hide("slow").delay(500);
+    });
+
+   
+</script>
