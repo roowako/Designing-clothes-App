@@ -95,3 +95,18 @@ html, body {
    appearance: none;
     background: url(../img/15xvbd5.png) no-repeat 96% 0;
 } 
+
+
+.border-enabled{
+  
+}
+
+.bg{
+  background: url(../img/blouse_front.png) no-repeat;
+  background-size: 100% 100%;
+  background-position: top;
+}
+
+.row{
+ 
+}

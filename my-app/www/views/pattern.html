@@ -30,10 +30,11 @@
         <br><br>
         <select class="col-xs-12 cs form-control tg" id="tg">
         	<option value="default"> Choose type of Garmnent </option>
-        	<option value="blouse"> Blouse </option>
-        	<option value="dGsleeve"> Dress/Gown(w/sleeves) </option>
-        	<option value="dGsleeveless"> Dress/Gown(w/o sleeves) </option>
-        	<option value="pants"> Pants</option>
+        	<option value="g_b_s"> Blouse w/ Sleeves </option>
+            <option value="g_b_ws"> Blouse w/o Sleeves</option>
+        	<option value="g_d_s"> Dress/Gown(w/sleeves) </option>
+        	<option value="g_d_ws"> Dress/Gown(w/o sleeves) </option>
+        	<option value="g_p"> Pants</option>
         </select>
         <br><br><br><br>
         <span style="text-align:center;" class="col-xs-12">Type of Fabric</span>
@@ -51,57 +52,9 @@
 
 
 </div>
-<div class="ajaxable row traversable_input">
-    <div class="col-sm-12 marginized">
-        <span style="text-align:center;" class="col-xs-12" ></span>
-        <div class="row">
-            <div class="col-xs-6 form-group">
-                <label></label>
-                <input type="text" class="form-control" placeholder="Shoulder Length">
-            </div>
-            <div class="col-xs-6 form-group">
-                <label></label>
-                <input type="text" class="form-control" placeholder="Bust">
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-xs-6 form-group">
-                <label></label>
-                <input type="text" class="form-control" placeholder="Waist">
-            </div>
-            <div class="col-xs-6 form-group">
-                <label></label>
-                <input type="text" class="form-control" placeholder="Hip 1">
-            </div>
-        </div>
 
-        <div class="row">
-            <div class="col-xs-6 form-group">
-                <label></label>
-                <input type="text" class="form-control" placeholder="Hip 2">
-            </div>
-            <div class="col-xs-6 form-group">
-                <label></label>
-                <input type="text" class="form-control" placeholder="Figure">
-            </div>
-        </div>
+<div class="ajaxify_input"></div>
 
-        <div class="row">
-            <div class="col-xs-6 form-group">
-                <label></label>
-                <input type="text" class="form-control" placeholder="Arm hole">
-            </div>
-            <div class="col-xs-6 form-group">
-                <label></label>
-                <input type="text" class="form-control" placeholder="Sleeve length">
-            </div>
-        </div>
-
-
-    </div>
-
-
-</div>
 <br><br>
 <div class="row">
 
@@ -114,7 +67,7 @@
     </div>
 	
 </div>
-
+<br><br>
 <script type="text/javascript">
     
     $(".traversable_input").hide();
@@ -135,10 +88,17 @@
         if(tg =="default" || tf == "default"){
             alert("Please select garment or fabric type.");
         } else{
-            $(".traversable_t").hide("slow").delay(500);
-            $(".traversable_input").show("slow");
-            $("#chosen_g").text(tg_text);
-            $(".btn-back-tg").show();
+
+            if( tg == "g_b_s"){
+                $(".traversable_t").hide("slow").delay(500);
+                $(".ajaxify_input").load('./ui/g_b_s.html').show("slow");
+                $("#chosen_g").text(tg_text);
+                $(".btn-back-tg").show();
+            } else{
+                alert("N/A");
+            }
+
+            
         }
     });
     $(".btn-back-tg").on("click",function(e){
