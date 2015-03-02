@@ -54,7 +54,103 @@
 </div>
 
 <div class="ajaxify_input"></div>
+<div class='js'>
+<div class="container bg" style="height:600px;">
+    <br>
+    <div class="row ">
+        <div class="col-xs-1 border-enabled"></div>
+        <div class="col-xs-2 border-enabled" >A = 3</div>
+        <div class="col-xs-2 border-enabled" id="res_b">B</div>
+        
 
+    </div>
+    <div class="row " style="margin-top:5px;">
+        <div class="col-xs-2 border-enabled" style="text-align:left;padding-top:15px;padding-left:2px;">D = 3</div>
+        <div class="col-xs-1 border-enabled"></div>
+        <div class="col-xs-3 border-enabled" style="text-align:center;padding-top:7px;padding-left:24px;">&nbsp;&nbsp;&nbsp;C = 1 1/2</div>
+        
+
+    </div>
+    <br>
+
+    <div class="row ">
+        <div class="col-xs-1 border-enabled " ></div>
+        <div class="col-xs-3 border-enabled" style="text-align:right;">F = 10</div>
+        <div class="col-xs-3 border-enabled" style="text-align:center;">E = 5</div>
+        
+
+    </div>
+
+    <br>
+
+    <div class="row " style="margin-top:9px;">
+        <div class="col-xs-1 border-enabled " ></div>
+        <div class="col-xs-2 border-enabled" style="text-align:right;"></div>
+        <div class="col-xs-3 border-enabled" style="text-align:right;" id="a_h_r">H</div>
+        
+
+    </div>
+
+    <br>
+
+    <div class="row " style="margin-top:9px;">
+        <div class="col-xs-1 border-enabled " ></div>
+        <div class="col-xs-2 border-enabled" style="text-align:right;"></div>
+        <div class="col-xs-3 border-enabled" style="text-align:left;padding-top:8px;"  id="r_bust">G</div>
+        
+
+    </div>
+
+    <br>
+
+    <div class="row " style="margin-top:9px;">
+        <div class="col-xs-1 border-enabled " ></div>
+        <div class="col-xs-2 border-enabled" style="text-align:center;" id="f_f_r">I&nbsp;&nbsp;&nbsp;&nbsp;</div>
+
+        
+
+    </div>
+
+    <br>
+
+    <div class="row " style="margin-top:9px;">
+        <div class="col-xs-1 border-enabled " ></div>
+        <div class="col-xs-2 border-enabled" style="text-align:center;" id="w_r">J&nbsp;&nbsp;&nbsp;&nbsp;</div>
+
+        
+
+    </div>
+
+    <br>
+
+    <div class="row " style="margin-top:9px;">
+        <div class="col-xs-1 border-enabled " >K = 4 1/2</div>
+        <div class="col-xs-2 border-enabled" style="text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;</div>
+
+        
+
+    </div>
+
+    <br>
+
+    <div class="row " style="margin-top:39px;">
+        <div class="col-xs-1 border-enabled " ></div>
+        <div class="col-xs-2 border-enabled" style="text-align:right;padding-top:8px;" id="f_h_1">L</div>
+
+    </div>
+
+    <br>
+
+    <div class="row " style="margin-top:9px;">
+        <div class="col-xs-1 border-enabled " >M = 3 1/2</div>
+        <div class="col-xs-2 border-enabled" style="text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;</div>
+
+        
+
+    </div>
+</div>
+
+</div>
 <br><br>
 <div class="row">
 
@@ -74,10 +170,12 @@
     
     $(".traversable_input").hide();
     $(".btn-back-tg").hide();
-
+    $(".js").css("display","none");
     $(".btn-next-tg").on("click",function(e){
 
         e.preventDefault();
+        $(this).removeClass("btn-next-tg");
+        $(this).addClass("s");
         //Collect dropdown values
         var tg = $("#tg option:selected").val();
         var tf = $(".fabric option:selected").val();

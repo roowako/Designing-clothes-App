@@ -69,25 +69,43 @@
 
 </div>
 
+<div class='js'>
+
+</div>
 <script type="text/javascript">
 
-    var b_s_l = $("#b_s_l").val(),
-        b_b = $("#b_b").val(),
-        b_w = $("#b_w").val(),
-        b_h_1 = $("#b_h_1").val(),
-        b_h_2 = $("#b_h_2").val(),
-        b_f_f = $("#b_f_f").val(),
-        b_f_b = $("#b_f_b").val(),
-        b_a_h = $("#b_a_h").val(),
-        b_a_l = $("#b_a_l").val(),
-        b_a_c = $("#b_a_c").val(),
-        b_b_l = $("#b_b_l").val();
+  
 
-        $(".btn-next-tg").on("click",function(e){
+        $(".s").on("click",function(e){
             e.preventDefault();
-            document.location = "./ui/res.html";
+          $(".js").css("display","block");
+            $(".ajaxify_input").css("display","none");
 
+            var b_s_l = $("#b_s_l").val(),
+            b_b = $("#b_b").val(),
+            b_w = $("#b_w").val(),
+            b_h_1 = $("#b_h_1").val(),
+            b_h_2 = $("#b_h_2").val(),
+            b_f_f = $("#b_f_f").val(),
+            b_f_b = $("#b_f_b").val(),
+            b_a_h = $("#b_a_h").val(),
+            b_a_l = $("#b_a_l").val(),
+            b_a_c = $("#b_a_c").val(),
+            b_b_l = $("#b_b_l").val();
 
+            var b = b_s_l - 3;
+            var b_r = b_b / 4;
+            var a_h_r = (b_a_h / 2 ) - 5 ;
+            var f_f = b_f_f;
+            var h_1 = b_h_1 / 4;
+            var w_r = b_w / 4;
+
+            $("#res_b").text("B = "+ b +" ");
+            $("#r_bust").text("G = "+ b_r +" ");
+            $("#a_h_r").text("H = "+ a_h_r +" ");
+            $("#f_f_r").text("I = "+ f_f  +" ");
+            $("#f_h_1").text("L = "+ h_1 +"");
+            $("#w_r").text("J = "+ w_r +" ");
         });
 
 </script>
